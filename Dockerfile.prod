@@ -1,0 +1,14 @@
+FROM node:16   
+
+WORKDIR /back   
+
+ENV PATH /back/node_modules/.bin:$PATH  
+
+COPY package.json /back/package.json
+
+RUN npm install --silent 
+RUN npm install @vue/cli@4.5.15 -g
+
+COPY . /back
+
+RUN npm run build
