@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  vue:
+    build:
+      context: ./
+      dockerfile: Dockerfile.prod
+    volumes:
+      - vue_dist:/home/back/vue/dist
+
+volumes:
+  vue_dist:

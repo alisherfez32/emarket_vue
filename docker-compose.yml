@@ -1,0 +1,12 @@
+services:
+  vue:
+    container_name: e_front
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/front'
+      - '/front/node_modules'
+
+    ports:
+      - '8081:8080'
